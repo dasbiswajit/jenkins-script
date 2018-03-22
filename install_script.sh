@@ -34,3 +34,6 @@ echo "-------------------------------------------"
 mkdir  /opt/chefdk/chefdir/ >> $logfile 
 mkdir  /opt/chefdk/chefdir/cookbooks >> $logfile 
 cd /opt/chefdk/chefdir/cookbooks >> $logfile 
+git clone https://github.com/dasbiswajit/test-cookbook.git
+echo "Adjust chef code here" >> $logfile 
+chef-client --local-mode --override-runlist test-cookbook >> $logfile
