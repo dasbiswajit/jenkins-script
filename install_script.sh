@@ -21,9 +21,6 @@ sudo yum install nfs-utils.x86_64 -y >> $logfile
 sudo yum install unzip -y >> $logfile
 sudo yum install java -y >> $logfile
 sleep 10
-echo "Git version updating" >> $logfile
-sudo yum install -y http://opensource.wandisco.com/centos/6/git/x86_64/wandisco-git-release-6-1.noarch.rpm >> $logfile
-sleep 10
 sudo yum --enablerepo=WANdisco-git install git -y >> $logfile
 sleep 10
 echo "installing Chef" >> $logfile 
