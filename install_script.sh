@@ -31,4 +31,23 @@ mkdir  /opt/chefdk/chefdir/cookbooks >> $logfile
 cd /opt/chefdk/chefdir/cookbooks >> $logfile 
 git clone https://github.com/dasbiswajit/test-cookbook.git
 echo "Adjust chef code here" >> $logfile 
-
+echo "Info: Generating master storage (EFS storage)..." >> $logfile  
+efsid=$1      
+echo "EFSID: $efsid"
+efsid=$efsid'.efs.eu-west-1.amazonaws.com'  
+echo "Info:: efsid value: $efsid" >> $logfile        
+echo "Info:: Creating jenkins directory./var/lib/jenkins." >> $logfile
+mkdir /var/lib/jenkins >> $logfile 
+echo "Info:: fstab entry" >> $logfile
+echo "$efsid:/ /var/lib/jenkins nfs4 defaults,vers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2  0  0" >> /etc/fstab
+sleep 60
+echo "Info:: Mounting the efs volume" >> $logfile
+mount -a
+echo "Info:: EFS volume has been mounted successfully" >> $logfile
+echo "installing PIP and AWS CLI"
+curl -O https://bootstrap.pypa.io/get-pip.py >> $logfile
+python get-pip.py --user >> $logfile
+echo "export PATH=~/.local/bin:$PATH"|sudo tee -a /etc/bashrc >> $logfile
+source ~/.bash_profile >> $logfile
+pip install awscli --upgrade --user >> $logfile
+echo"Info:: AWS CLI has been installed"  >> $logfile
