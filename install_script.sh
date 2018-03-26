@@ -47,7 +47,7 @@ echo "Info:: EFS volume has been mounted successfully" >> $logfile
 echo "installing PIP and AWS CLI"
 curl -O https://bootstrap.pypa.io/get-pip.py >> $logfile
 python get-pip.py --user >> $logfile
-echo "export PATH=~/.local/bin:$PATH"|sudo tee -a /etc/bashrc >> $logfile
+echo "PATH=~/.local/bin:$PATH" >> /root/.bash_profile >> $logfile
 source ~/.bash_profile >> $logfile
 pip install awscli --upgrade --user >> $logfile
 echo"Info:: AWS CLI has been installed"  >> $logfile
