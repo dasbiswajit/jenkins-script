@@ -30,6 +30,7 @@ mkdir  /opt/chefdk/chefdir/ >> $logfile
 mkdir  /opt/chefdk/chefdir/cookbooks >> $logfile 
 cd /opt/chefdk/chefdir/cookbooks >> $logfile 
 git clone https://github.com/dasbiswajit/test-cookbook.git
+sudo export PATH=$PATH:/opt/chefdk/chefdir/
 echo "Adjust chef code here" >> $logfile 
 echo "Info: Generating master storage (EFS storage)..." >> $logfile  
 efsid=$1      
