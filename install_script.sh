@@ -29,7 +29,7 @@ echo "-------------------------------------------"
 mkdir  /opt/chefdk/chefdir/ >> $logfile 
 mkdir  /opt/chefdk/chefdir/cookbooks >> $logfile 
 cd /opt/chefdk/chefdir/cookbooks >> $logfile 
-git clone -b release https://github.com/dasbiswajit/jenkins-cookbook.git
+git clone https://github.com/dasbiswajit/jenkins-cookbook.git
 sudo export PATH=$PATH:/opt/chefdk/chefdir/
 echo "Adjust chef code here" >> $logfile 
 echo "Info: Generating master storage (EFS storage)..." >> $logfile  
