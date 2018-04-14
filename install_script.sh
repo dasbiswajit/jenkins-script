@@ -48,14 +48,7 @@ echo "Info:: Mounting the efs volume" >> $logfile
 mount -a
 echo "Info:: EFS volume has been mounted successfully" >> $logfile
 echo "Info:: AWS CLI Installation" >> $logfile
-wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
-sleep 10
-tar xzf setuptools-7.0.tar.gz
-cd setuptools-7.0
-python setup.py install
-wget https://bootstrap.pypa.io/get-pip.py
-python get-pip.py
-echo "Info:: EFS volume has been mounted successfully" >> $logfile
-pip install awscli
+easy_install pip | tee -a $logfile
+pip install awscli | tee -a $logfile
 echo "Info:: AWS CLI has been installed successfully" >> $logfile
 
