@@ -20,7 +20,6 @@ echo "installing nfs-utils.x86_64" >> $logfile
 sudo yum install nfs-utils.x86_64 -y >> $logfile
 sudo yum install unzip -y >> $logfile
 sudo yum install java -y >> $logfile
-sudo yum install mysql -y >> $logfile
 sleep 10
 echo "installing Chef" >> $logfile 
 sudo wget https://packages.chef.io/files/stable/chefdk/2.5.3/el/7/chefdk-2.5.3-1.el7.x86_64.rpm >> $logfile
