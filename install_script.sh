@@ -7,7 +7,7 @@ user=`whoami`
 echo "Executing install_script.sh using user $user" >> $logfile
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" >> $logfile
 echo "proxy setup" >> $logfile
-echo 'export {http,https}_proxy="vpce-0c72110145328a789-ygatkcz5.vpce-svc-0a79140bd223a5a11.eu-west-1.vpce.amazonaws.com:3128"' | sudo tee -a /etc/bashrc
+echo 'export {http,https}_proxy="vpce-0433981369c08476d-oy16n0if.vpce-svc-06204172f41f7e867.eu-west-1.vpce.amazonaws.com:3128"' | sudo tee -a /etc/bashrc
 source /etc/bashrc
 echo "running yum update...." >> $logfile
 yum update -y >> $logfile
